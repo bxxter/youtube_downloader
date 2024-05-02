@@ -2,8 +2,7 @@ from pytube import YouTube  # Importa la clase YouTube desde el módulo pytube
 
 try:
     # Solicita al usuario que ingrese el enlace del video
-    video_link = input('Ingrese el enlace del video: ')
-    print('\n')
+    video_link = input('Ingrese el enlace del video: \n')
 
     # Crea un objeto YouTube con el enlace proporcionado
     yt = YouTube(video_link)
@@ -15,8 +14,7 @@ try:
     # Calcula la duración del video en minutos y segundos
     duration_seconds = int(yt.length)
     minutes, seconds = divmod(duration_seconds, 60)
-    print("Duracion: ", "{}:{}".format(minutes, seconds))  # Muestra la duración del video en formato MM:SS
-    print('\n')
+    print("Duracion: ", "{}:{}".format(minutes, seconds), "\n")  # Muestra la duración del video en formato MM:SS
 
     # Filtra las opciones de transmisión disponibles para videos progresivos en formato mp4 y las ordena por resolución de forma descendente
     available_streams = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc()
