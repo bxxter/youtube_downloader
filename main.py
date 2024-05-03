@@ -2,7 +2,7 @@ from pytube import YouTube  # Importa la clase YouTube desde el módulo pytube
 
 try:
     # Solicita al usuario que ingrese el enlace del video
-    video_link = input('Ingrese el enlace del video: \n')
+    video_link = input('Ingrese el enlace del video: ')
 
     # Crea un objeto YouTube con el enlace proporcionado
     yt = YouTube(video_link)
